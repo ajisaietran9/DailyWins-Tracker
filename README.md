@@ -1,4 +1,4 @@
-# DailyWins Tracker
+# DailyWins Tracker (MADE USING GOOGLE AI STUDIO)
 
 A personal productivity app for building better habits, tracking your mood, and creating an identity that you want to be aligned with more. 
 
