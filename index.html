@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Daily Wins</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              slate: {
+                950: '#06080f',
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8fafc; /* slate-50 */
+        background-image: radial-gradient(ellipse 80% 80% at 50% -20%,rgba(120,119,198,0.15),rgba(255,255,255,0));
+        color: #0f172a; /* slate-900 */
+      }
+      .dark body {
+        background-color: #06080f;
+        background-image: radial-gradient(ellipse 80% 80% at 50% -20%,rgba(120,119,198,0.3),rgba(255,255,255,0));
+        color: #e2e8f0; /* slate-200 */
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.9); /* Higher opacity for better text contrast */
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(0, 0, 0, 0.08); /* Slightly darker border */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Stronger shadow for separation */
+      }
+      .dark .glass-card {
+        background: rgba(10, 14, 26, 0.2);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      }
+      
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(1.5rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+
+      @keyframes slide-in-down {
+        from {
+          opacity: 0;
+          transform: translateY(-0.5rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-slide-in-down {
+        animation: slide-in-down 0.4s ease-out both;
+      }
+      
+      @keyframes subtle-glow {
+        0%, 100% {
+          box-shadow: 0 0 15px -5px, 0 0 30px -10px;
+        }
+        50% {
+          box-shadow: 0 0 20px -5px, 0 0 40px -10px;
+        }
+      }
+
+      @keyframes cinematic-gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      @keyframes float-ethereal {
+        0% { transform: translateY(0px) scale(1); opacity: 0.1; }
+        50% { transform: translateY(-40px) scale(1.05); opacity: 0.25; }
+        100% { transform: translateY(0px) scale(1); opacity: 0.1; }
+      }
+
+      @keyframes pulse-glow-cinematic {
+        0% {
+            box-shadow: 0 0 0 0 rgba(196, 181, 253, 0.3);
+        }
+        70% {
+            box-shadow: 0 0 0 20px rgba(196, 181, 253, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(196, 181, 253, 0);
+        }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow-cinematic 3s infinite;
+      }
+
+      @keyframes fall {
+      from { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+    @keyframes flutter-1 {
+      0% { transform: translateX(0) rotate(0); }
+      50% { transform: translateX(-50px) rotate(180deg); }
+      100% { transform: translateX(0) rotate(360deg); }
+    }
+    @keyframes flutter-2 {
+      0% { transform: translateX(0) rotate(0); }
+      50% { transform: translateX(50px) rotate(90deg); }
+      100% { transform: translateX(0) rotate(0); }
+    }
+    @keyframes flutter-3 {
+      0% { transform: translateX(0) rotate(0); }
+      33% { transform: translateX(25px) rotate(120deg); }
+      66% { transform: translateX(-25px) rotate(240deg); }
+      100% { transform: translateX(0) rotate(360deg); }
+    }
+
+    .animate-fall { animation-name: fall; animation-timing-function: linear; }
+    .flutter-1 { animation-name: flutter-1; animation-duration: 4s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    .flutter-2 { animation-name: flutter-2; animation-duration: 5s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    .flutter-3 { animation-name: flutter-3; animation-duration: 3s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+    
+    @keyframes completion-ring {
+      from {
+        transform: scale(0.8);
+        opacity: 0.7;
+        border-color: #4ade80; /* green-400 */
+      }
+      to {
+        transform: scale(2.5);
+        opacity: 0;
+        border-color: #4ade80;
+      }
+    }
+    .animate-completion-ring {
+      animation: completion-ring 0.6s ease-out forwards;
+    }
+
+    @keyframes new-win-flash {
+      0% { background-color: rgba(199, 210, 254, 0); } /* indigo-100 transparent */
+      50% { background-color: rgba(199, 210, 254, 0.1); } 
+      100% { background-color: rgba(199, 210, 254, 0); }
+    }
+    .animate-new-win-flash {
+      animation: new-win-flash 1.2s ease-out;
+    }
+    
+    @keyframes fade-out {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(0.95); }
+    }
+    .animate-fade-out {
+      animation: fade-out 0.3s ease-out forwards;
+    }
+
+    @keyframes check-pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-check-pop {
+      animation: check-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes badge-bounce {
+      0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+      60% { transform: scale(1.2) rotate(10deg); opacity: 1; }
+      80% { transform: scale(0.9) rotate(-5deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+    .animate-badge-bounce {
+      animation: badge-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-200 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
