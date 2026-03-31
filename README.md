@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# DailyWins Tracker
 
-# Run and deploy your AI Studio app
+A personal productivity app for building better habits, tracking your mood, and becoming the person you want to be — one daily win at a time.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/8d8a19d3-43e9-41b2-8a82-94e70e03048b
+- **Habit Tracking** — log daily wins across physical, mental, and spiritual categories and build momentum through consistency
+- **Identity System** — choose or create a personal identity (e.g. "The Athlete", "The Scholar") and align your daily habits to who you're becoming
+- **Mood Logging** — check in with how you're feeling each day and reflect on your progress over time
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React 19 + TypeScript
+- Vite
+- Google Gemini API (for AI-powered features)
+- localStorage for data persistence
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**Prerequisites:** Node.js
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/ajisaietran9/DailyWins-Tracker.git
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Create a `.env.local` file in the root of the project and add your Gemini API key:
+   ```
+   API_KEY=your_gemini_api_key_here
+   ```
+
+4. Run the app:
+   ```
+   npm run dev
+   ```
+
+You can get a free Gemini API key at [https://aistudio.google.com](https://aistudio.google.com).
