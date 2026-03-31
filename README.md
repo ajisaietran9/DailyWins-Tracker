@@ -1,6 +1,6 @@
 # DailyWins Tracker
 
-A personal productivity app for building better habits, tracking your mood, and becoming the person you want to be — one daily win at a time.
+A personal productivity app for building better habits, tracking your mood, and creating an identity that you want to be aligned with more. 
 
 ## Features
 
@@ -39,4 +39,4 @@ A personal productivity app for building better habits, tracking your mood, and 
    npm run dev
    ```
 
-You can get a free Gemini API key at [https://aistudio.google.com](https://aistudio.google.com).
+free Gemini API key at [https://aistudio.google.com](https://aistudio.google.com).
